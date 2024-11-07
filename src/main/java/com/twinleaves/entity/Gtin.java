@@ -20,5 +20,5 @@ public class Gtin extends BaseEntity {
 
     @OneToMany(mappedBy = "gtin")
     private List<Batch> batches;
-    
+
 }

@@ -15,7 +15,6 @@ public class Batch extends BaseEntity {
     private int sp;
     private int purchasePrice;
     private int availableQuantity;
-    private LocalDateTime inwardedOn;
 
     @ManyToOne
     @JoinColumn(name = "gtinId", nullable = false)
