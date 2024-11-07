@@ -1,7 +1,7 @@
 # twinleaves
 
 ## Overview
-Twinleaves is a Java-based application (details unspecified). This repository includes Gradle build files and core project resources. It is designed for developers interested in Java projects using Gradle.
+This is a Java-based application.
 
 ## Getting Started
 
