@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.twinleaves.dto.GtinResponseDto;
 import com.twinleaves.entity.Gtin;
 import com.twinleaves.exception.ResourceNotFoundException;
 import com.twinleaves.service.GtinService;
@@ -26,7 +27,7 @@ public class GtinController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getGtinById(@PathVariable Long id) {
         try {
-            Gtin gtin = gtinService.getGtinById(id);
+            GtinResponseDto gtin = gtinService.getGtinById(id);
             return new ResponseEntity<>(gtin, HttpStatus.OK);
         } catch (ResourceNotFoundException e) {
             return new ResponseEntity<>("GTIN not found with id: " + id, HttpStatus.NOT_FOUND);
@@ -35,19 +36,19 @@ public class GtinController {
 
     @PostMapping
     public ResponseEntity<?> createGtin(@RequestBody Gtin gtin) {
-        Gtin createdGtin = gtinService.createGtin(gtin);
+        GtinResponseDto createdGtin = gtinService.createGtin(gtin);
         return new ResponseEntity<>(createdGtin, HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<?> getAllGtins() {
-        List<Gtin> gtins = gtinService.getAllGtins();
+        List<GtinResponseDto> gtins = gtinService.getAllGtins();
         return new ResponseEntity<>(gtins, HttpStatus.OK);
     }
 
     @GetMapping("/positive-quantity")
     public ResponseEntity<?> getGtinsWithPositiveQuantity() {
-        List<Gtin> gtinsWithPositiveQuantity = gtinService.getGtinsWithPositiveQuantity();
+        List<GtinResponseDto> gtinsWithPositiveQuantity = gtinService.getGtinsWithPositiveQuantity();
         return new ResponseEntity<>(gtinsWithPositiveQuantity, HttpStatus.OK);
     }
 

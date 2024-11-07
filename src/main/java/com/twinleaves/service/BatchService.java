@@ -2,17 +2,17 @@ package com.twinleaves.service;
 
 import java.util.List;
 
-import com.twinleaves.dto.BatchDto;
+import com.twinleaves.dto.BatchResponseDto;
 import com.twinleaves.entity.Batch;
 
 public interface BatchService {
 
-    Batch createBatch(Batch batch);
+    BatchResponseDto createBatch(Batch batch);
 
-    Batch getBatchById(Long id);
+    BatchResponseDto getBatchById(Long id);
 
-    List<Batch> getAllBatches();
+    List<BatchResponseDto> getAllBatches();
 
-    List<BatchDto> getLatestBatchWithNonPositiveQuantity();
+    List<BatchResponseDto> getLatestBatchWithNonPositiveQuantity();
 
 }

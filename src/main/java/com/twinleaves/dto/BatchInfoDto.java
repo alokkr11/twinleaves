@@ -5,10 +5,9 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class BatchDto {
+public class BatchInfoDto {
 
     private Long batchId;
-    private Long gtinId;
     private int availableQuantity;
-    
+
 }
